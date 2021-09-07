@@ -1,0 +1,30 @@
+using System;
+
+class randomowe
+{
+
+    public static void Main()
+    {
+        poczatek:
+        Random a = new Random();
+
+        Console.WriteLine("");
+        Console.WriteLine("Podaj liczbe od 1 do 9:   ");
+        int b = int.Parse(Console.ReadLine());
+
+
+        Console.WriteLine("wylosowana liczba to  {0} ", a.Next(10));
+        
+        if(a.Next(10) == b)
+        {
+            Console.WriteLine("Brawo udało ci się odgadnąć liczbe!!");
+        }
+        else
+        {
+            Console.WriteLine("niestety tym razem nie udało ci sie odgadnąc ");
+        }
+        goto poczatek;
+        
+    }
+
+}
