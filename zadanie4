@@ -1,0 +1,49 @@
+using System;
+
+class ilosc
+{
+
+    public static void Main()
+    {
+        Console.WriteLine("podaj ile chcesz podac liczb:  ");
+        int a = int.Parse(Console.ReadLine());
+
+        double[] tablica = new double[a];
+        int x, y;
+        for (x = 0; x < tablica.Length ; x++) 
+        {
+            Console.WriteLine("podaj liczby:  ");
+            y = int.Parse(Console.ReadLine());
+            tablica[x] = y;
+        }
+
+        for (int d = 0; d < tablica.Length; d++)
+        {
+            Console.WriteLine("---for---" + tablica[d]);
+        }
+
+        Console.WriteLine("");
+        foreach (int z in tablica)
+        {
+            Console.WriteLine("---foreach--- {0}", z);
+        }
+
+        Console.WriteLine("");
+        int b = 0, c =0;
+        while (b < tablica.Length)
+        {
+            b++;
+            Console.WriteLine("---while--- {0}", b);
+        }
+
+        Console.WriteLine("");
+        do
+        {
+            Console.WriteLine("---do while--- {0}", tablica[c]);
+            c++;
+        } while (c < tablica.Length);
+
+        
+    }
+
+}
