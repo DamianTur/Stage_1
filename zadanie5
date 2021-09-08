@@ -1,0 +1,47 @@
+using System;
+
+{
+    class licz
+    {
+
+
+           private int wartosc;
+           public int dodaj(int dodawanie)
+        {
+            wartosc = wartosc + dodawanie;
+            return wartosc;
+        }
+        public int odejmij(int odejmowanie)
+        {
+            wartosc = wartosc - odejmowanie;
+            return wartosc;
+        }
+        public licz(int wart)
+        {
+            wartosc = wart;
+        }
+        public void stan()
+        {
+            Console.WriteLine(wartosc);
+        }
+
+    }
+    class wartosci
+    {
+        static void Main()
+        {
+            Console.Write("podaj jedna liczbe:  ");
+            int a = int.Parse(Console.ReadLine());
+
+            Console.Write("podaj druga liczbe:  ");
+            int b = int.Parse(Console.ReadLine());
+            licz obiekt = new licz(0);
+            licz obiekta = new licz(a);
+            licz obiektb = new licz(b);
+            obiekta.dodaj(b);
+            obiektb.odejmij(a);
+            obiekta.stan();
+            obiektb.stan();
+        }
+    }
+}
