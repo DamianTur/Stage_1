@@ -1,0 +1,49 @@
+using System;
+
+class rownanie
+{
+
+    public static void Main()
+    {
+
+    liczby:
+        Console.Write("podaj a ");
+        double a = double.Parse(Console.ReadLine());
+
+        Console.Write("podaj b ");
+        double b = double.Parse(Console.ReadLine());
+
+        Console.Write("podaj c ");
+        double c = double.Parse(Console.ReadLine());
+
+
+        if (a == 0)
+        {
+            Console.WriteLine("a nie moze = 0 podaj liczby jeszcze raz");
+            goto liczby;
+        }
+
+        double delta, x1, x2, x0;
+        delta = b * b - 4 * a * c;
+        {
+            Console.WriteLine("delta jest równa  {0:#.##}", delta);
+        }
+
+        switch (delta)
+            case > 0:
+                x1 = (-b - delta) / (2 * a);
+                x2 = (-b + delta) / (2 * a);
+                Console.WriteLine("x1 = {0:#.##} oraz x2 = {1:#.##}", x1, x2);
+                delta = Math.Sqrt(delta);
+
+        case 0:
+            x0 = -b / (2 * a);
+            Console.WriteLine("x0 = {0:#.##}", x0);
+                break;
+
+        default:
+            Console.WriteLine("równanie to nie ma żadnych pierwiastków");
+            break;
+        }
+
+}
