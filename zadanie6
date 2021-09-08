@@ -1,0 +1,73 @@
+using System;
+
+
+
+class sortowanie
+{
+    static void Main()
+    {
+        Console.WriteLine("podaj ile bedzie liczb");
+        int n = int.Parse(Console.ReadLine());
+
+        int j = 1, x;
+        int[] d = new int[n];
+
+        for (x = 0; x < d.Length; x++)
+        {
+            Console.WriteLine("podaj liczby:  ");
+            int c = int.Parse(Console.ReadLine());
+            d[x] = c;
+        }
+
+    start:
+
+        if (j < d.Length)
+        {
+            int i = 1;
+        raz:
+            if (i < d.Length)
+            {
+                if (d[i - 1] > d[i]) 
+                {
+                    int d1;
+                    d1 = d[i - 1];
+                    d[i - 1] = d[i];
+                    d[i] = d1;
+                    goto dwa;
+                }
+
+                    else
+                {
+                    goto dwa;
+                }
+            dwa:
+
+                i = i + 1;
+                goto raz;
+
+            }
+
+            else
+            {
+                j = j + 1;
+                goto start;
+            }
+
+        }
+
+        else
+        {
+
+            for (int v = 0; v < d.Length; v++)
+            {
+
+                Console.WriteLine(d[v]);
+
+            }
+        }
+            
+        
+    }
+}
+    
+
