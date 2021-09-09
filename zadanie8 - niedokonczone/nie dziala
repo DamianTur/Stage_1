@@ -1,0 +1,55 @@
+using System;
+
+class metody
+{
+    public string[] stos = new string[2];
+
+
+    public void Push()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            if (stos[i] == null)
+            {
+                Console.Write("dodaj {0} element do stosu ", i+1);
+                string x = (Console.ReadLine());
+                stos[i] = x;
+                break;
+            }
+        }
+
+
+    }
+    public void Pop()
+    {
+        stos[2] = null;
+    }
+    public void Peek()
+    {
+        if(stos[2] == null)
+        {
+            Console.WriteLine(stos[1]);
+        }
+        else
+        {
+            Console.WriteLine(stos[2]);
+        }
+    }
+}
+
+     
+   
+class stosy
+{
+    public static void Main()
+    {
+        metody metoda1 = new metody();
+        metoda1.Push();
+        metoda1.Push();
+        metoda1.Peek();
+        metoda1.Pop();
+        metoda1.Peek();
+    }
+}
+
+
