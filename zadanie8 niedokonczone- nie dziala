@@ -22,24 +22,37 @@ class metody
     }
     public void Pop()
     {
-        stos[2] = null;
+        int i, s = stos.Length;
+        for ( i = 0 ; i >= s; s-- )
+        {
+            if (stos[s] == null)
+            {
+                stos[s] = null;
+                Console.WriteLine("zostal zdiety ostatni element ze stosu");
+                break;
+            }
+        }
     }
     public void Peek()
     {
-        if(stos[2] == null)
+        int i, s = stos.Length;
+        for (i = 0; i >= s; s--)
         {
-            Console.WriteLine(stos[1]);
-        }
-        else
-        {
-            Console.WriteLine(stos[2]);
+            if (stos[s] == null)
+            {
+                Console.WriteLine(stos[i]);
+            }
+            else
+            {
+                Console.WriteLine(stos[s]);
+            }
         }
     }
 }
 
      
    
-class metoda
+class ogulne
 {
     public static void Main()
     {
