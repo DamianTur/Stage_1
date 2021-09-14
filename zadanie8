@@ -2,16 +2,16 @@ using System;
 
 class metody
 {
-    public string[] stos = new string[2];
+    public string[] stos = new string[100];
 
 
     public void Push()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < stos.Length; i++)
         {
             if (stos[i] == null)
             {
-                Console.Write("dodaj {0} element do stosu ", i+1);
+                Console.Write("dodaj {0} element do stosu ", i + 1);
                 string x = (Console.ReadLine());
                 stos[i] = x;
                 break;
@@ -22,31 +22,32 @@ class metody
     }
     public void Pop()
     {
-        int i, s = stos.Length;
-        for ( i = 0 ; i >= s; s-- )
+        for (int i = 0; i < stos.Length; i++)
         {
-            if (stos[s] == null)
+
+            if (stos[i] == null)
             {
-                stos[s] = null;
-                Console.WriteLine("zostal zdiety ostatni element ze stosu");
+                stos[i - 1] = null;
+                Console.WriteLine("ostatni elemet zostal zdjety ze stosu");
                 break;
+
             }
         }
     }
     public void Peek()
     {
-        int i, s = stos.Length;
-        for (i = 0; i >= s; s--)
+        for (int i = 0; i < stos.Length; i++)
         {
-            if (stos[s] == null)
+
+            if (stos[i] == null)
             {
-                Console.WriteLine(stos[i]);
-            }
-            else
-            {
-                Console.WriteLine(stos[s]);
+                Console.Write("element z wierzchołka stosu to:  ");
+                Console.WriteLine( stos[i - 1]);
+                break;
+
             }
         }
+    
     }
 }
 
